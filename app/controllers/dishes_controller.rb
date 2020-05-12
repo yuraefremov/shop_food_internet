@@ -9,7 +9,7 @@ class DishesController < ApplicationController
 
   def create
     @dish = Dish.new(dish_params)
-    if dish.save
+    if @dish.save
       redirect_to @dish, success: 'Блюдо успешно создано'
     else
       render :new
