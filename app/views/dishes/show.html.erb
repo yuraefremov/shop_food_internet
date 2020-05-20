@@ -1,5 +1,7 @@
 <h1><%= @dish.name %></h1>
 <%= link_to 'Изменить', edit_dish_path(@dish)%>
+|
+<%= link_to 'Удалить', dish_path(@dish), method: :delete, data: {confirm: 'Вы уверены?'} %>
 
 <p> <%= @dish.description %></p>
 <p> <%= @dish.price %></p>
