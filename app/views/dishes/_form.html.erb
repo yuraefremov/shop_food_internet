@@ -1,4 +1,6 @@
-<%= form_for (Dish.new) do |f|%>
+
+<%= form_with(model: @dish, local: true) do |f| %>
+
   <div class = "form-control">
     <%= f.label :name %>
     <%= f.text_field :name %>
@@ -6,10 +8,10 @@
 
   <div class = "form-control">
     <%= f.label :description %>
-    <%= f.text_field :description %>
+    <%= f.text_area :description %>
   </div>
 
-  <div class = "form-control">
+ <div class = "form-control">
     <%= f.label :price %>
     <%= f.number_field :price %>
   </div>
