@@ -2,17 +2,17 @@
 <%= form_with(model: @dish, local: true) do |f| %>
 
   <div class = "form-control">
-    <%= f.label :name %>
+    <%= f.label :name, 'Название' %>
     <%= f.text_field :name %>
   </div>
 
   <div class = "form-control">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
+   <%= f.label :description, 'Описание' %>
+   <%= f.text_area :description %>
   </div>
 
  <div class = "form-control">
-    <%= f.label :price %>
+    <%= f.label :price, 'Цена' %>
     <%= f.number_field :price %>
   </div>
 

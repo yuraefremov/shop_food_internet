@@ -1,12 +1,9 @@
 class DishesController < ApplicationController
 
   before_action :set_dish, only:[:show, :edit, :update, :destroy ]
-  
+
   def index
     @dishes =  Dish.all
-  end
-
-  def show
   end
 
   def new
@@ -20,9 +17,6 @@ class DishesController < ApplicationController
     else
       render :new
     end
-  end
-
-  def edit
   end
 
   def update 
