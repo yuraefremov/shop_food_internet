@@ -1,2 +1,20 @@
-<h2> <%= link_to dish.name, dish_path(dish[:id]) %></h2>
+<article class = "dish">
+<div class="col-md-6">
+  <section class = "dish-head">
+    <h2> <%= link_to dish.name, dish_path(dish[:id]) %></h2>
+    <small>
+      <time> <%= dish.created_at.to_date.strftime("%d,%B,%Y")%></time>
+      |<%= link_to 'Изменить', edit_dish_path(dish)%>
+    </small>
+  </section>
 
+  <section class = "dish-description">
+    <%= dish.description %>
+  </section>
+</div>
+<div class="col-md-6">
+  <section class = "dish-price">
+     <%= dish.price %>
+  </section>
+</div>
+</article>
