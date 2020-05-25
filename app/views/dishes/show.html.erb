@@ -9,14 +9,18 @@
         |<%= link_to 'Удалить', dish_path(@dish), method: :delete, data: {confirm: 'Вы уверены?'} %>
       </small>
     </section>
-
+    <section>
+      <%=image_tag @dish.image.url(:large), class: 'img-show' if @dish.image?  %>
+    </section>
+       
     <section class = "dish-description">
       <%= @dish.description %>
     </section>
   </div>
+
   <div class="col-md-6">
     <section class = "dish-price">
-       <%= @dish.price %>
+       Цена: <%= @dish.price %> тнг
     </section>
   </div>
 </article>
