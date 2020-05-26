@@ -1,2 +1,9 @@
 <h2> Все блюда </h2>
  <%= render @dishes %>
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-end">
+     <%= will_paginate @dishes %>
+  </ul>
+</nav>
+
+

@@ -27,6 +27,7 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+
 # Use ActiveStorage variant
 gem 'mini_magick', '~> 4.8'
 gem 'carrierwave', '~> 2.0'
@@ -41,6 +42,7 @@ gem 'bootstrap', '~> 4.0.0.alpha4'
 source'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.1.0'
 end
+gem 'will_paginate', '~> 3.1.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
