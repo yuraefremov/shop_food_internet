@@ -1,0 +1,12 @@
+<%= form_with(model: @category, local: true ) do |f| %>
+
+  <div class = "form-control">
+    <%= f.label :name, 'Название' %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class = "form-control">
+    <%= f.submit 'Сохранить' %>
+  </div>
+
+<% end%>

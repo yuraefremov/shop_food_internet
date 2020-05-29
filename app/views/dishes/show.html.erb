@@ -5,6 +5,9 @@
       <h1> <%= @dish.name%></h1>
       <small>
         <time> <%= @dish.created_at.to_date.strftime("%d,%B,%Y")%></time>
+         <% if @dish.category.present? %>
+          |<%= link_to @dish.category.name, @dish.category%>
+          <% end %>
         |<%= link_to 'Изменить', edit_dish_path(@dish)%>
         |<%= link_to 'Удалить', dish_path(@dish), method: :delete, data: {confirm: 'Вы уверены?'} %>
       </small>

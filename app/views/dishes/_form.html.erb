@@ -11,6 +11,11 @@
   </div>
 
   <div class = "form-control">
+    <%= f.label :category_id, 'Категория' %>
+    <%= f.collection_select :category_id, Category.order(:name), :id,:name, { include_blank: true } %>
+  </div>
+
+  <div class = "form-control">
     <%= f.label :price, 'Цена' %>
     <%= f.number_field :price %>
   </div>

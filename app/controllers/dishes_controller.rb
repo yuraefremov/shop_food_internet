@@ -15,6 +15,7 @@ class DishesController < ApplicationController
     if @dish.save
       redirect_to @dish, success: 'Блюдо успешно создано'
     else
+      flash.now[:danger] = 'Блюдо не создано'
       render :new
     end
   end
@@ -23,6 +24,7 @@ class DishesController < ApplicationController
     if @dish.update(dish_params)
       redirect_to @dish, success: 'Блюдо успешно изменено'
     else
+      flash.now[:danger] = 'Блюдо не изменено'
       render :edit 
     end
   end
@@ -40,6 +42,6 @@ class DishesController < ApplicationController
   end
 
   def dish_params
-    params.require(:dish).permit(:name, :price, :description, :image)
+    params.require(:dish).permit(:name, :price, :description, :category_id, :image)
   end
 end
