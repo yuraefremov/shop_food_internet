@@ -42,6 +42,6 @@ class DishesController < ApplicationController
   end
 
   def dish_params
-    params.require(:dish).permit(:name, :price, :description, :category_id, :image)
+    params.require(:dish).permit(:name, :price, :description,:category_id, :image)
   end
 end
