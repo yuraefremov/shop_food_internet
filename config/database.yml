@@ -4,44 +4,44 @@
 #   Ensure the SQLite 3 gem is defined in your Gemfile
 #   gem 'sqlite3'
 #------------connecting the project to the database sqlite3----------------------
-default: &default
-  adapter: sqlite3
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  timeout: 5000
+# default: &default
+#   adapter: sqlite3
+#   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+#   timeout: 5000
 
-development:
-  <<: *default
-  database: db/development.sqlite3
+# development:
+#   <<: *default
+#   database: db/development.sqlite3
 
 
-  <<: *default
-  database: db/test.sqlite3
+#   <<: *default
+#   database: db/test.sqlite3
 
-production:
-  <<: *default
-  database: db/production.sqlite3
+# production:
+#   <<: *default
+#   database: db/production.sqlite3
 #---------------------------------------------------------------------------------
 
 # -------connecting the project to the database postgresql------------------------
-# development:
-#   adapter: postgresql
-#   encoding: unicode
-#   database: food_shop_db
-#   pool: 5
-#   timeout: 5000
-#   username: postgres
-#   password: postgres
-#   host: localhost
-#   port: 5432
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: food_shop_db
+  pool: 5
+  timeout: 5000
+  username: postgres
+  password: postgres
+  host: localhost
+  port: 5432
 
-# test:
-#   adapter: postgresql
-#   encoding: unicode
-#   database: test_food_shop_db
-#   pool: 5
-#   timeout: 5000
-#   username: postgres
-#   password: postgres
-#   host: localhost
-#   port: 5432
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: test_food_shop_db
+  pool: 5
+  timeout: 5000
+  username: postgres
+  password: postgres
+  host: localhost
+  port: 5432
 # ---------------------------------------------------------------------------------
