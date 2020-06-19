@@ -9,19 +9,11 @@ RSpec.describe DishesController, type: :controller do
   end
 
   # context "GET #show" do
-  #   let!(:dish){ Dish.create(name: "Test name", price: 10, description: "Test description",category_id: 2,id: 5)}
+  #   let!(:dish){ Dish.create(name: "Test name", price: 10, description: "Test description",category_id: 2)}
   #   it "return success response" do
-  #     get :show, params: {id: 5}
+  #     get :show, params: dish.to_param
   #     expect(response).to be_success
   #   end 
   # end
-
-
-            describe 'GET #show' do
-              before { get :show }
-      
-              it { should render_template('show') }
-               expect(response).to be_success
-            end
-          end
+        
 end

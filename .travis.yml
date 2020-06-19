@@ -1,0 +1,23 @@
+language: ruby
+cache: bundler
+
+before_script:
+  - export RAILS_ENV=test
+  - bundle exec rake db:drop
+  - psql -c 'create database test_food_shop_db;' -U food_shop_db
+  - bundle exec rake db:create --all
+  - bundle exec rake db:migrate
+  - bundle exec rake db:seed
+  - bundle exec rake cucumber
+notifications:
+  email: false
+services:
+  - postgresql
+addons:
+  chrome: stable
+
+env:
+  - CI=true
+matrix:
+  include:
+    - rvm: 2.5.1
