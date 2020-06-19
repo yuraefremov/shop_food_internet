@@ -1,1 +1,7 @@
-show.html.erb
+<h1> <%= @category.name%></h1>
+<div>
+  <small>
+    <time> <%= @category.created_at.to_date.strftime("%d,%B,%Y")%></time>
+  </small>
+</div>
+  <%= link_to 'На главную страницу',  root_path, class:'btn btn-primary' %>

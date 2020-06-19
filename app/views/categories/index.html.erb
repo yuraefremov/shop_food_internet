@@ -21,8 +21,10 @@
           <td> <%= category.name %></td>
           
           <td>
-            <%= link_to 'Изменить', edit_category_path(category), class: 'btn btn-outline-primary btn-sm' %>
-            <%= link_to 'Удалить', category_path(category),mathod: :delete, data: { confirm: 'Вы уверены'}, class: 'btn btn-outline-danger btn-sm' %>
+            <% if user_signed_in? %>
+              <%= link_to 'Изменить', edit_category_path(category), class: 'btn btn-outline-primary btn-sm' %>
+              <%= link_to 'Удалить', category_path(category),mathod: :delete, data: { confirm: 'Вы уверены'}, class: 'btn btn-outline-danger btn-sm' %>
+            <%end%>
           </td>
         </tr>
       <%end%>

@@ -1,13 +1,10 @@
 class CategoriesController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
   
   before_action :set_category, only: [:show, :edit, :update, :destroy]
 
   def index
     @categories = Category.all
-  end
-
-  def show
-  
   end
 
   def new
@@ -24,10 +21,6 @@ class CategoriesController < ApplicationController
       flash[:danger] = 'Категория не создана'
       render :new
     end
-  end
-
-  def edit
-    
   end
 
   def update
