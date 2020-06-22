@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 class DishesController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
-  
-  before_action :set_dish, only:[:show, :edit, :update, :destroy ]
+  before_action :authenticate_user!, except: %i[index show]
+
+  before_action :set_dish, only: %i[show edit update destroy]
 
   def index
-    @dishes =  Dish.paginate(page: params[:page], per_page: 5)
+    @dishes = Dish.paginate(page: params[:page], per_page: 5)
   end
 
   def new
@@ -21,12 +23,12 @@ class DishesController < ApplicationController
     end
   end
 
-  def update 
+  def update
     if @dish.update(dish_params)
       redirect_to @dish, success: 'Блюдо успешно изменено'
     else
       flash.now[:danger] = 'Блюдо не изменено'
-      render :edit 
+      render :edit
     end
   end
 
@@ -34,12 +36,11 @@ class DishesController < ApplicationController
     @dish.destroy
     redirect_to root_path, success: 'Блюдо успешно удалено'
   end
-  
 
-  private 
+  private
 
   def set_dish
-     @dish = Dish.find(params[:id])
+    @dish = Dish.find(params[:id])
   end
 
   def dish_params
