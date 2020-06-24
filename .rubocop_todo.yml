@@ -1,4 +1,7 @@
 AllCops:
+
+  DisplayCopsNames: true
+
   Exclude:
     - 'config/initializers/devise.rb'
     - 'db/**.*'

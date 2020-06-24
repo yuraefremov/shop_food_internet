@@ -3,6 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe DishesController, type: :controller do
+  
   context 'GET #index' do
     it 'return success response' do
       get :index
@@ -10,11 +11,15 @@ RSpec.describe DishesController, type: :controller do
     end
   end
 
-  # context "GET #show" do
-  #   let!(:dish){ Dish.create(name: "Test name", price: 10, description: "Test description",category_id: 2)}
-  #   it "return success response" do
-  #     get dish_path(dish)
-  #     expect(response).to be_success
-  #   end
-  # end
+  describe 'GET #show' do
+    dish = FactoryBot.create(:dish)
+    it 'render show template ' do
+      get :show, params: { id: dish.id }
+      expect(response).to be_success
+    end
+  end
+
+  
+
+
 end
