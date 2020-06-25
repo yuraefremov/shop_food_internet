@@ -31,11 +31,13 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use ActiveStorage variant
-gem 'bootstrap', '~> 4.0.0.alpha4'
+# gem 'bootstrap', '~> 4.0.0.alpha4'
+gem 'bootstrap', '~> 4.3.1'
 gem 'carrierwave', '~> 2.0'
 gem 'devise'
 gem 'mini_magick', '~> 4.8'
 gem 'rubocop-rails', require: false
+gem 'rails-controller-testing'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

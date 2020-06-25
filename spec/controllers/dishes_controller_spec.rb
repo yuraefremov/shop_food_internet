@@ -3,6 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe DishesController, type: :controller do
+
   
   context 'GET #index' do
     it 'return success response' do
@@ -19,7 +20,19 @@ RSpec.describe DishesController, type: :controller do
     end
   end
 
-  
+  describe "GET #new" do
+    before do 
+      get :new
+    end
+    it 'assingns a New Dish to @dish' do 
+      expect(assigns(:dish)).to be_a_new(Dish)
+    end
+
+    it 'renders new views' do
+      expect(response).to render_template :new 
+    end
+  end
+
 
 
 end
