@@ -23,6 +23,7 @@ Rails.application.configure do
   # Disable serving static files from the `/public` folder by default since
   # Apache or NGINX already handles this.
   config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
+  
 
   # Compress JavaScripts and CSS.
   config.assets.js_compressor = :uglifier
@@ -93,4 +94,25 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
+
+  config.active_record.dump_schema_after_migration = false
+  
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_caching = false
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.default_options = { from: 'efremov18228@yandex.kz' }
+  config.action_mailer.default_url_options = { :host => 'https://whispering-mesa-23706.herokuapp.com' }
+
+  ActionMailer::Base.smtp_settings = {
+    :address              => 'smtp.yandex.kz',
+    :domain               => 'yandex.kz',
+    :port                 => 465,
+    :user_name            => 'efremov18228@yandex.kz',
+    :password             => 'yura18228',
+    :authentication       => 'plain',
+    :enable_starttls_auto => true,
+    :tls                  => true
+  }
+  
 end

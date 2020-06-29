@@ -17,7 +17,6 @@ RSpec.describe DishesController, type: :controller do
       expect(response).to be_success
     end
   end
-
   # describe 'GET #new' do
   #   before do
   #     get :new
@@ -29,5 +28,4 @@ RSpec.describe DishesController, type: :controller do
   #     expect(response).to render_template :new
   #   end
   # end
-  
 end

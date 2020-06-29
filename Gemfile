@@ -38,6 +38,8 @@ gem 'mini_magick', '~> 4.8'
 gem 'rails-controller-testing'
 gem 'rubocop-rails', require: false
 
+gem 'rails_12factor', group: :production
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -47,6 +49,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.1.0'
 end
+
 gem 'will_paginate', '~> 3.1.0'
 
 group :development, :test do
@@ -54,6 +57,7 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'rspec-rails', '~> 4.0.0'
   gem 'shoulda-matchers', '~> 4.0'
+  gem 'letter_opener'
 end
 
 group :development do
@@ -61,7 +65,7 @@ group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'web-console', '>= 3.3.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'letter_opener'
+  
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
