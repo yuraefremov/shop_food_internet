@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class DishesController < ApplicationController
-  # before_action :authenticate_user!, except: %i[index show]
+  before_action :authenticate_user!, except: %i[index show]
 
   before_action :set_dish, only: %i[show edit update destroy]
 

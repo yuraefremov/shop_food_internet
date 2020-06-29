@@ -35,8 +35,8 @@ gem 'bootstrap', '~> 4.0.0.alpha4'
 gem 'carrierwave', '~> 2.0'
 gem 'devise'
 gem 'mini_magick', '~> 4.8'
-gem 'rubocop-rails', require: false
 gem 'rails-controller-testing'
+gem 'rubocop-rails', require: false
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -72,7 +72,7 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
-  gem "factory_bot_rails"
+  gem 'factory_bot_rails'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
