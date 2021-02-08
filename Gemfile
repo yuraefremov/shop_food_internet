@@ -32,7 +32,7 @@ gem 'jbuilder', '~> 2.5'
 
 # Use ActiveStorage variant
 gem 'bootstrap', '~> 4.0.0.alpha4'
-gem 'carrierwave', '~> 2.0'
+gem 'carrierwave', '~> 2.1'
 gem 'devise'
 gem 'mini_magick', '~> 4.8'
 gem 'rails-controller-testing'
